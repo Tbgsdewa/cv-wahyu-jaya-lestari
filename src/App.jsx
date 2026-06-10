@@ -1,0 +1,305 @@
+import { useState, useEffect } from 'react'
+
+function App() {
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const navLinks = [
+    { href: '#beranda', label: 'Beranda' },
+    { href: '#tentang', label: 'Tentang' },
+    { href: '#produk', label: 'Produk' },
+    { href: '#keunggulan', label: 'Keunggulan' },
+    { href: '#dokumen', label: 'Dokumen' },
+    { href: '#kontak', label: 'Kontak' },
+  ]
+
+  return (
+    <div className="font-sans text-text leading-relaxed overflow-x-hidden">
+      {/* NAVIGATION */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 px-8 py-4 flex justify-between items-center transition-all duration-300 ${scrolled ? 'bg-white/97 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)] py-3' : ''}`}>
+        <a href="#beranda" className={`text-xl font-bold no-underline transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-white'}`}>
+          CV. Wahyu Jaya Lestari
+        </a>
+        <ul className={`hidden md:flex gap-8 list-none ${menuOpen ? '!flex absolute top-full left-0 right-0 bg-white flex-col p-6 gap-4 shadow-[0_10px_30px_rgba(0,0,0,0.1)]' : ''}`}>
+          {navLinks.map(link => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={`no-underline text-sm font-medium transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all hover:after:w-full ${scrolled ? 'text-text' : 'text-white/90'}`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <button
+          className={`flex md:hidden flex-col gap-[5px] cursor-pointer bg-transparent border-none p-1`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={`w-6 h-0.5 transition-all ${scrolled ? 'bg-primary' : 'bg-white'}`}></span>
+          <span className={`w-6 h-0.5 transition-all ${scrolled ? 'bg-primary' : 'bg-white'}`}></span>
+          <span className={`w-6 h-0.5 transition-all ${scrolled ? 'bg-primary' : 'bg-white'}`}></span>
+        </button>
+      </nav>
+
+      {/* HERO */}
+      <section id="beranda" className="relative h-screen min-h-[600px] flex items-center justify-center text-center overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center brightness-[0.4]" style={{ backgroundImage: "url('/images/hero-aerial.png')" }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/70 to-dark/85"></div>
+        <div className="relative z-[2] max-w-[800px] p-8">
+          <div className="inline-block px-5 py-1.5 border border-accent/50 rounded-full text-accent text-xs font-medium tracking-[2px] uppercase mb-6">
+            Pengolahan Kelapa Sawit
+          </div>
+          <h1 className="text-4xl md:text-[3.5rem] font-extrabold text-white leading-[1.15] mb-4">
+            CV. Wahyu Jaya <span className="text-accent">Lestari</span>
+          </h1>
+          <p className="text-base md:text-lg text-white/80 max-w-[600px] mx-auto mb-10 leading-relaxed">
+            Pengolahan Kelapa Sawit Terintegrasi di Kabupaten Kampar, Riau. 
+            Kami memproses tandan buah segar menjadi CPO berkualitas dengan fasilitas 
+            yang terverifikasi dan legalitas yang jelas.
+          </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <a href="#tentang" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold bg-accent text-primary no-underline transition-all hover:bg-accent-light hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(201,164,74,0.3)]">
+              Pelajari Lebih Lanjut
+            </a>
+            <a href="#kontak" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold bg-transparent text-white border border-white/40 no-underline transition-all hover:border-white hover:bg-white/10 hover:-translate-y-0.5">
+              Hubungi Kami
+            </a>
+          </div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[2] text-white/60 text-xs tracking-[2px] uppercase flex flex-col items-center gap-2">
+          Scroll
+          <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent animate-pulse"></div>
+        </div>
+      </section>
+
+      {/* TENTANG KAMI */}
+      <section id="tentang" className="py-24 px-8">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src="/images/factory-equipment.png" alt="Fasilitas pabrik" className="w-full h-full object-cover" />
+              <div className="absolute -bottom-2.5 -right-2.5 w-[120px] h-[120px] bg-accent rounded-2xl -z-10"></div>
+            </div>
+            <div>
+              <span className="inline-block text-accent text-xs font-semibold tracking-[3px] uppercase mb-3">Tentang Kami</span>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6 leading-tight">
+                Mitra Pengolahan Sawit yang Terpercaya di Kampar
+              </h2>
+              <p className="text-text-light mb-5 leading-relaxed">
+                CV. Wahyu Jaya Lestari berdiri sebagai wujud komitmen untuk menghadirkan pengolahan 
+                kelapa sawit yang tertib, transparan, dan berorientasi hasil di Kabupaten Kampar. 
+                Perusahaan resmi terdaftar berdasarkan Akta Notaris Nomor 02 tanggal 02 Oktober 2023.
+              </p>
+              <p className="text-text-light mb-5 leading-relaxed">
+                Berlokasi di Kecamatan Tapung, salah satu kecamatan dengan kerapatan kebun sawit 
+                tertinggi di Riau, kami hadir untuk mengisi celah kebutuhan: pengolahan TBS yang 
+                dapat dipercaya oleh petani mandiri maupun kelompok tani.
+              </p>
+              <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-gray-200">
+                <div>
+                  <h3 className="text-2xl font-extrabold text-primary">2023<span className="text-accent">.</span></h3>
+                  <p className="text-xs text-text-light uppercase tracking-wider m-0">Tahun Berdiri</p>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-extrabold text-primary">AHU<span className="text-accent">.</span></h3>
+                  <p className="text-xs text-text-light uppercase tracking-wider m-0">Terdaftar Resmi</p>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-extrabold text-primary">Tapung<span className="text-accent">.</span></h3>
+                  <p className="text-xs text-text-light uppercase tracking-wider m-0">Lokasi Strategis</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUK & LAYANAN */}
+      <section id="produk" className="py-24 px-8 bg-bg-alt">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block text-accent text-xs font-semibold tracking-[3px] uppercase mb-3">Produk & Layanan</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-primary leading-tight mb-4">Solusi Pengolahan Sawit Terpadu</h2>
+            <p className="text-base text-text-light max-w-[650px] mx-auto leading-relaxed">
+              Dari penerimaan TBS hingga penyimpanan CPO, seluruh proses dilakukan 
+              di satu lokasi dengan infrastruktur yang lengkap.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              { img: '/images/fresh-fruit-bunches.png', num: 1, title: 'Pengolahan TBS → CPO', desc: 'Penerimaan dan pengolahan tandan buah segar menjadi Crude Palm Oil melalui lini produksi lengkap. Infrastruktur mencakup jembatan timbang, sterilizer, press, klarifikasi, dan tangki penyimpanan.' },
+              { img: '/images/fresh-fruit-bunches.png', num: 2, title: 'Penerimaan & Penimbangan TBS', desc: 'Layanan penerimaan TBS dengan jembatan timbang berkapasitas memadai dan pencatatan terstruktur. Kepastian bobot yang akurat dan dokumentasi yang rapi untuk seluruh pemasok.' },
+              { img: '/images/cpo-storage.png', num: 3, title: 'Penyimpanan CPO', desc: 'Fasilitas tangki penyimpanan CPO untuk menampung hasil produksi sebelum distribusi. Fleksibilitas waktu pengiriman ke pembeli atau offtaker dengan kapasitas yang memadai.' },
+              { img: '/images/factory-equipment.png', num: 4, title: 'Hasil Sampingan (Kernel)', desc: 'Pengolahan inti sawit sebagai produk sampingan dari proses produksi CPO. Proses kernel recovery terintegrasi dalam lini produksi sebagai sumber pendapatan tambahan bagi mitra.' },
+            ].map(item => (
+              <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)]">
+                <div className="h-[220px] overflow-hidden">
+                  <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div className="p-8">
+                  <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent text-primary text-xs font-bold mb-4">{item.num}</div>
+                  <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
+                  <p className="text-text-light text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* KEUNGGULAN KOMPETITIF */}
+      <section id="keunggulan" className="py-24 px-8">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block text-accent text-xs font-semibold tracking-[3px] uppercase mb-3">Keunggulan Kami</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-primary leading-tight mb-4">Mengapa Memilih Kami</h2>
+            <p className="text-base text-text-light max-w-[650px] mx-auto leading-relaxed">
+              Infrastruktur lengkap, legalitas jelas, dan lokasi strategis, 
+              fondasi yang kuat untuk kemitraan jangka panjang.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: '🏭', title: 'Infrastruktur Terpadu', desc: 'Fasilitas pabrik mencakup seluruh tahap pengolahan: penerimaan TBS, sterilisasi, digester & press, klarifikasi CPO, pemulihan kernel, hingga penyimpanan di tangki.' },
+              { icon: '⚖️', title: 'Jembatan Timbang Operasional', desc: 'Jembatan timbang yang berada langsung di area pabrik memastikan kecepatan penerimaan TBS dan akurasi penimbangan yang dapat diverifikasi.' },
+              { icon: '📋', title: 'Legalitas Lengkap', desc: 'Terdaftar resmi sebagai CV berdasarkan akta notaris dengan pengesahan Kementerian Hukum dan HAM RI. Kepastian hukum bagi seluruh mitra.' },
+              { icon: '⚡', title: 'Listrik PLN Tetap', desc: 'Sambungan listrik PLN langsung di area pabrik menjamin kesinambungan operasional dan menekan biaya energi jangka panjang.' },
+              { icon: '🚜', title: 'Alat Mekanis Pendukung', desc: 'Ketersediaan wheel loader di area pabrik memungkinkan handling material TBS yang lebih cepat dan efisien, mengurangi waktu tunggu.' },
+              { icon: '📍', title: 'Lokasi Strategis', desc: 'Kecamatan Tapung merupakan salah satu kawasan produksi TBS tertinggi di Provinsi Riau, memangkas biaya dan waktu transportasi.' },
+            ].map(item => (
+              <div key={item.title} className="p-8 rounded-2xl bg-white border border-gray-200 transition-all duration-300 hover:border-accent hover:shadow-[0_8px_30px_rgba(201,164,74,0.1)]">
+                <div className="w-[50px] h-[50px] rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center mb-5 text-xl">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
+                <p className="text-text-light text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DOKUMEN PERUSAHAAN */}
+      <section id="dokumen" className="py-24 px-8 bg-bg-alt">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block text-accent text-xs font-semibold tracking-[3px] uppercase mb-3">Dokumen Perusahaan</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-primary leading-tight mb-4">Unduh Dokumen Legalitas</h2>
+            <p className="text-base text-text-light max-w-[650px] mx-auto leading-relaxed">
+              Kami menyediakan dokumen resmi perusahaan untuk keperluan due diligence 
+              oleh investor, calon mitra, dan lembaga keuangan.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 max-w-[800px] mx-auto">
+            {[
+              { title: 'Akta Pendirian Perusahaan', desc: 'Akta Notaris Nomor 02 tanggal 02 Oktober 2023, dibuat di hadapan Notaris Franderico Aseanto, S.H., M.Kn.', tags: ['PDF', 'Resmi'], file: '/documents/Akta-Pendirian-CV-Wahyu-Jaya-Lestari.pdf' },
+              { title: 'Pengesahan Kemenkumham', desc: 'Surat pengesahan dari Kementerian Hukum dan HAM RI dengan nomor registrasi AHU-0061144-AH.01.14 Tahun 2023.', tags: ['PDF', 'Resmi'], file: '/documents/Pengesahan-Kemenkumham-AHU-0061144.pdf' },
+              { title: 'Profil Perusahaan', desc: 'Dokumen profil lengkap perusahaan mencakup visi, misi, fasilitas, dan informasi operasional.', tags: ['PDF', 'Company Profile'], file: '/documents/Company-Profile-CV-Wahyu-Jaya-Lestari.pdf' },
+            ].map(doc => (
+              <div key={doc.title} className="flex items-center gap-6 p-6 md:p-8 bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:border-accent hover:shadow-[0_8px_30px_rgba(201,164,74,0.1)]">
+                <div className="shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center text-white">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base font-bold text-primary mb-1">{doc.title}</h3>
+                  <p className="text-sm text-text-light leading-relaxed mb-2">{doc.desc}</p>
+                  <div className="flex gap-2 flex-wrap">
+                    {doc.tags.map(tag => (
+                      <span key={tag} className="inline-block px-2.5 py-0.5 bg-bg-alt rounded-full text-[10px] font-semibold text-primary uppercase tracking-wide">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+                <a href={doc.file} download className="shrink-0 w-12 h-12 rounded-full bg-accent text-primary flex items-center justify-center no-underline transition-all duration-300 hover:bg-primary hover:text-accent hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(26,61,43,0.2)]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                </a>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10 p-6 bg-white rounded-xl border border-dashed border-gray-300">
+            <p className="text-sm text-text-light">
+              <strong>Catatan:</strong> Jika Anda memerlukan dokumen tambahan atau salinan resmi lainnya, silakan{' '}
+              <a href="#kontak" className="text-primary font-semibold underline">hubungi kami</a> langsung untuk permintaan khusus.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* KONTAK */}
+      <section id="kontak" className="py-24 px-8 bg-primary text-white text-center">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block text-accent text-xs font-semibold tracking-[3px] uppercase mb-3">Hubungi Kami</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">Mari Bermitra dengan Kami</h2>
+            <p className="text-base text-white/70 max-w-[650px] mx-auto leading-relaxed">
+              Kami terbuka untuk kemitraan dengan petani, kelompok tani, investor, 
+              dan pembeli CPO. Hubungi kami untuk informasi lebih lanjut.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: '📍', title: 'Lokasi', text: 'Kecamatan Tapung, Kabupaten Kampar, Provinsi Riau, Indonesia' },
+              { icon: '📧', title: 'Email', text: 'tbgsdewa@gmail.com' },
+              { icon: '📞', title: 'Telepon', text: '083857649532' },
+              { icon: '💬', title: 'WhatsApp', text: 'Chat Langsung', link: 'https://wa.me/6283857649532' },
+            ].map(item => (
+              <div key={item.title} className="p-8 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-accent">
+                <div className="w-[50px] h-[50px] rounded-full bg-accent/15 flex items-center justify-center mx-auto mb-4 text-xl">
+                  {item.icon}
+                </div>
+                <h3 className="text-base font-semibold mb-2">{item.title}</h3>
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-accent text-sm leading-relaxed hover:underline font-semibold inline-flex items-center gap-1">
+                    {item.text}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                ) : (
+                  <p className="text-white/70 text-sm leading-relaxed">{item.text}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-dark text-white/50 py-12 px-8">
+        <div className="max-w-[1200px] mx-auto flex flex-wrap justify-between items-center gap-4">
+          <div>
+            <div className="text-lg font-bold text-white">CV. Wahyu Jaya <span className="text-accent">Lestari</span></div>
+            <p className="text-sm mt-1">Pengolahan Kelapa Sawit Terintegrasi</p>
+          </div>
+          <p className="text-sm">&copy; {new Date().getFullYear()} CV. Wahyu Jaya Lestari. Seluruh hak cipta dilindungi.</p>
+          <ul className="flex gap-6 list-none">
+            {navLinks.map(link => (
+              <li key={link.href}>
+                <a href={link.href} className="text-white/50 no-underline text-sm transition-colors hover:text-accent">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default App
