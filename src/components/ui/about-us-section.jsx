@@ -186,7 +186,7 @@ export default function AboutUsSection() {
         </motion.div>
 
         <motion.p className="text-center max-w-2xl mx-auto mb-16 text-[#1a3d2b]/80" variants={itemVariants}>
-          Berdiri sejak 2023 di Kecamatan Tapung, Kabupaten Kampar, Riau — salah satu sentra perkebunan sawit terbesar di Sumatera. 
+          Berdiri sejak 2023 di Kecamatan Tapung, Kabupaten Kampar, Riau, salah satu sentra perkebunan sawit terbesar di Sumatera.
           Kami memproses TBS menjadi CPO berkualitas dengan infrastruktur terpadu, legalitas resmi, dan komitmen terhadap kemitraan yang berkelanjutan.
         </motion.p>
 
@@ -220,7 +220,7 @@ export default function AboutUsSection() {
                 whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
               >
                 <img
-                  src="/images/factory-equipment.png"
+                  src="/images/about-factory.png"
                   alt="Fasilitas Pabrik CV. Wahyu Jaya Lestari"
                   className="w-full h-full object-cover"
                 />

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import AboutUsSection from '@/components/ui/about-us-section'
 import ContactComponent from '@/components/ui/contact-section'
+import KeunggulanSection from '@/components/ui/keunggulan-section'
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -99,10 +100,10 @@ function App() {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { img: '/images/fresh-fruit-bunches.png', num: 1, title: 'Pengolahan TBS → CPO', desc: 'Penerimaan dan pengolahan tandan buah segar menjadi Crude Palm Oil melalui lini produksi lengkap. Infrastruktur mencakup jembatan timbang, sterilizer, press, klarifikasi, dan tangki penyimpanan.' },
-              { img: '/images/fresh-fruit-bunches.png', num: 2, title: 'Penerimaan & Penimbangan TBS', desc: 'Layanan penerimaan TBS dengan jembatan timbang berkapasitas memadai dan pencatatan terstruktur. Kepastian bobot yang akurat dan dokumentasi yang rapi untuk seluruh pemasok.' },
-              { img: '/images/cpo-storage.png', num: 3, title: 'Penyimpanan CPO', desc: 'Fasilitas tangki penyimpanan CPO untuk menampung hasil produksi sebelum distribusi. Fleksibilitas waktu pengiriman ke pembeli atau offtaker dengan kapasitas yang memadai.' },
-              { img: '/images/factory-equipment.png', num: 4, title: 'Hasil Sampingan (Kernel)', desc: 'Pengolahan inti sawit sebagai produk sampingan dari proses produksi CPO. Proses kernel recovery terintegrasi dalam lini produksi sebagai sumber pendapatan tambahan bagi mitra.' },
+              { img: '/images/product-tbs-cpo.png', num: 1, title: 'Pengolahan TBS → CPO', desc: 'Penerimaan dan pengolahan tandan buah segar menjadi Crude Palm Oil melalui lini produksi lengkap. Infrastruktur mencakup jembatan timbang, sterilizer, press, klarifikasi, dan tangki penyimpanan.' },
+              { img: '/images/product-weighbridge.png', num: 2, title: 'Penerimaan & Penimbangan TBS', desc: 'Layanan penerimaan TBS dengan jembatan timbang berkapasitas memadai dan pencatatan terstruktur. Kepastian bobot yang akurat dan dokumentasi yang rapi untuk seluruh pemasok.' },
+              { img: '/images/product-cpo-storage.png', num: 3, title: 'Penyimpanan CPO', desc: 'Fasilitas tangki penyimpanan CPO untuk menampung hasil produksi sebelum distribusi. Fleksibilitas waktu pengiriman ke pembeli atau offtaker dengan kapasitas yang memadai.' },
+              { img: '/images/product-kernel.png', num: 4, title: 'Hasil Sampingan (Kernel)', desc: 'Pengolahan inti sawit sebagai produk sampingan dari proses produksi CPO. Proses kernel recovery terintegrasi dalam lini produksi sebagai sumber pendapatan tambahan bagi mitra.' },
             ].map(item => (
               <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)]">
                 <div className="h-[220px] overflow-hidden">
@@ -120,36 +121,7 @@ function App() {
       </section>
 
       {/* KEUNGGULAN KOMPETITIF */}
-      <section id="keunggulan" className="py-24 px-8">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block text-accent text-xs font-semibold tracking-[3px] uppercase mb-3">Keunggulan Kami</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-primary leading-tight mb-4">Mengapa Memilih Kami</h2>
-            <p className="text-base text-text-light max-w-[650px] mx-auto leading-relaxed">
-              Infrastruktur lengkap, legalitas jelas, dan lokasi strategis, 
-              fondasi yang kuat untuk kemitraan jangka panjang.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: '🏭', title: 'Infrastruktur Terpadu', desc: 'Fasilitas pabrik mencakup seluruh tahap pengolahan: penerimaan TBS, sterilisasi, digester & press, klarifikasi CPO, pemulihan kernel, hingga penyimpanan di tangki.' },
-              { icon: '⚖️', title: 'Jembatan Timbang Operasional', desc: 'Jembatan timbang yang berada langsung di area pabrik memastikan kecepatan penerimaan TBS dan akurasi penimbangan yang dapat diverifikasi.' },
-              { icon: '📋', title: 'Legalitas Lengkap', desc: 'Terdaftar resmi sebagai CV berdasarkan akta notaris dengan pengesahan Kementerian Hukum dan HAM RI. Kepastian hukum bagi seluruh mitra.' },
-              { icon: '⚡', title: 'Listrik PLN Tetap', desc: 'Sambungan listrik PLN langsung di area pabrik menjamin kesinambungan operasional dan menekan biaya energi jangka panjang.' },
-              { icon: '🚜', title: 'Alat Mekanis Pendukung', desc: 'Ketersediaan wheel loader di area pabrik memungkinkan handling material TBS yang lebih cepat dan efisien, mengurangi waktu tunggu.' },
-              { icon: '📍', title: 'Lokasi Strategis', desc: 'Kecamatan Tapung merupakan salah satu kawasan produksi TBS tertinggi di Provinsi Riau, memangkas biaya dan waktu transportasi.' },
-            ].map(item => (
-              <div key={item.title} className="p-8 rounded-2xl bg-white border border-gray-200 transition-all duration-300 hover:border-accent hover:shadow-[0_8px_30px_rgba(201,164,74,0.1)]">
-                <div className="w-[50px] h-[50px] rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center mb-5 text-xl">
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
-                <p className="text-text-light text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <KeunggulanSection />
 
       {/* DOKUMEN PERUSAHAAN */}
       <section id="dokumen" className="py-24 px-8 bg-bg-alt">
