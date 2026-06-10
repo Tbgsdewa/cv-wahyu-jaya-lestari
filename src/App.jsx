@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import AboutUsSection from '@/components/ui/about-us-section'
+import ContactComponent from '@/components/ui/contact-section'
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -13,7 +14,7 @@ function App() {
 
   const navLinks = [
     { href: '#beranda', label: 'Beranda' },
-    { href: '#tentang', label: 'Tentang' },
+    { href: '#about-section', label: 'Tentang' },
     { href: '#produk', label: 'Produk' },
     { href: '#keunggulan', label: 'Keunggulan' },
     { href: '#dokumen', label: 'Dokumen' },
@@ -68,7 +69,7 @@ function App() {
             yang terverifikasi dan legalitas yang jelas.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a href="#tentang" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold bg-accent text-primary no-underline transition-all hover:bg-accent-light hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(201,164,74,0.3)]">
+            <a href="#about-section" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold bg-accent text-primary no-underline transition-all hover:bg-accent-light hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(201,164,74,0.3)]">
               Pelajari Lebih Lanjut
             </a>
             <a href="#kontak" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold bg-transparent text-white border border-white/40 no-underline transition-all hover:border-white hover:bg-white/10 hover:-translate-y-0.5">
@@ -79,48 +80,6 @@ function App() {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[2] text-white/60 text-xs tracking-[2px] uppercase flex flex-col items-center gap-2">
           Scroll
           <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent animate-pulse"></div>
-        </div>
-      </section>
-
-      {/* TENTANG KAMI */}
-      <section id="tentang" className="py-24 px-8">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src="/images/factory-equipment.png" alt="Fasilitas pabrik" className="w-full h-full object-cover" />
-              <div className="absolute -bottom-2.5 -right-2.5 w-[120px] h-[120px] bg-accent rounded-2xl -z-10"></div>
-            </div>
-            <div>
-              <span className="inline-block text-accent text-xs font-semibold tracking-[3px] uppercase mb-3">Tentang Kami</span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-6 leading-tight">
-                Mitra Pengolahan Sawit yang Terpercaya di Kampar
-              </h2>
-              <p className="text-text-light mb-5 leading-relaxed">
-                CV. Wahyu Jaya Lestari berdiri sebagai wujud komitmen untuk menghadirkan pengolahan 
-                kelapa sawit yang tertib, transparan, dan berorientasi hasil di Kabupaten Kampar. 
-                Perusahaan resmi terdaftar berdasarkan Akta Notaris Nomor 02 tanggal 02 Oktober 2023.
-              </p>
-              <p className="text-text-light mb-5 leading-relaxed">
-                Berlokasi di Kecamatan Tapung, salah satu kecamatan dengan kerapatan kebun sawit 
-                tertinggi di Riau, kami hadir untuk mengisi celah kebutuhan: pengolahan TBS yang 
-                dapat dipercaya oleh petani mandiri maupun kelompok tani.
-              </p>
-              <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-gray-200">
-                <div>
-                  <h3 className="text-2xl font-extrabold text-primary">2023<span className="text-accent">.</span></h3>
-                  <p className="text-xs text-text-light uppercase tracking-wider m-0">Tahun Berdiri</p>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-extrabold text-primary">AHU<span className="text-accent">.</span></h3>
-                  <p className="text-xs text-text-light uppercase tracking-wider m-0">Terdaftar Resmi</p>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-extrabold text-primary">Tapung<span className="text-accent">.</span></h3>
-                  <p className="text-xs text-text-light uppercase tracking-wider m-0">Lokasi Strategis</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -247,41 +206,7 @@ function App() {
       </section>
 
       {/* KONTAK */}
-      <section id="kontak" className="py-24 px-8 bg-primary text-white text-center">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12">
-            <span className="inline-block text-accent text-xs font-semibold tracking-[3px] uppercase mb-3">Hubungi Kami</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">Mari Bermitra dengan Kami</h2>
-            <p className="text-base text-white/70 max-w-[650px] mx-auto leading-relaxed">
-              Kami terbuka untuk kemitraan dengan petani, kelompok tani, investor, 
-              dan pembeli CPO. Hubungi kami untuk informasi lebih lanjut.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: '📍', title: 'Lokasi', text: 'Kecamatan Tapung, Kabupaten Kampar, Provinsi Riau, Indonesia' },
-              { icon: '📧', title: 'Email', text: 'tbgsdewa@gmail.com' },
-              { icon: '📞', title: 'Telepon', text: '083857649532' },
-              { icon: '💬', title: 'WhatsApp', text: 'Chat Langsung', link: 'https://wa.me/6283857649532' },
-            ].map(item => (
-              <div key={item.title} className="p-8 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-accent">
-                <div className="w-[50px] h-[50px] rounded-full bg-accent/15 flex items-center justify-center mx-auto mb-4 text-xl">
-                  {item.icon}
-                </div>
-                <h3 className="text-base font-semibold mb-2">{item.title}</h3>
-                {item.link ? (
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-accent text-sm leading-relaxed hover:underline font-semibold inline-flex items-center gap-1">
-                    {item.text}
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
-                ) : (
-                  <p className="text-white/70 text-sm leading-relaxed">{item.text}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ContactComponent />
 
       {/* FOOTER */}
       <footer className="bg-dark text-white/50 py-12 px-8">
