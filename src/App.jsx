@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import AboutUsSection from '@/components/ui/about-us-section'
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -122,6 +123,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* ABOUT US SECTION (21st.dev) */}
+      <AboutUsSection />
 
       {/* PRODUK & LAYANAN */}
       <section id="produk" className="py-24 px-8 bg-bg-alt">
