@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import AboutUsSection from '@/components/ui/about-us-section'
 import ContactComponent from '@/components/ui/contact-section'
 import KeunggulanSection from '@/components/ui/keunggulan-section'
+import ProdukSection from '@/components/ui/produk-section'
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -88,37 +89,7 @@ function App() {
       <AboutUsSection />
 
       {/* PRODUK & LAYANAN */}
-      <section id="produk" className="py-24 px-8 bg-bg-alt">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block text-accent text-xs font-semibold tracking-[3px] uppercase mb-3">Produk & Layanan</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-primary leading-tight mb-4">Solusi Pengolahan Sawit Terpadu</h2>
-            <p className="text-base text-text-light max-w-[650px] mx-auto leading-relaxed">
-              Dari penerimaan TBS hingga penyimpanan CPO, seluruh proses dilakukan 
-              di satu lokasi dengan infrastruktur yang lengkap.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              { img: '/images/product-tbs-cpo.png', num: 1, title: 'Pengolahan TBS → CPO', desc: 'Penerimaan dan pengolahan tandan buah segar menjadi Crude Palm Oil melalui lini produksi lengkap. Infrastruktur mencakup jembatan timbang, sterilizer, press, klarifikasi, dan tangki penyimpanan.' },
-              { img: '/images/product-weighbridge.png', num: 2, title: 'Penerimaan & Penimbangan TBS', desc: 'Layanan penerimaan TBS dengan jembatan timbang berkapasitas memadai dan pencatatan terstruktur. Kepastian bobot yang akurat dan dokumentasi yang rapi untuk seluruh pemasok.' },
-              { img: '/images/product-cpo-storage.png', num: 3, title: 'Penyimpanan CPO', desc: 'Fasilitas tangki penyimpanan CPO untuk menampung hasil produksi sebelum distribusi. Fleksibilitas waktu pengiriman ke pembeli atau offtaker dengan kapasitas yang memadai.' },
-              { img: '/images/product-kernel.png', num: 4, title: 'Hasil Sampingan (Kernel)', desc: 'Pengolahan inti sawit sebagai produk sampingan dari proses produksi CPO. Proses kernel recovery terintegrasi dalam lini produksi sebagai sumber pendapatan tambahan bagi mitra.' },
-            ].map(item => (
-              <div key={item.num} className="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)]">
-                <div className="h-[220px] overflow-hidden">
-                  <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-                <div className="p-8">
-                  <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent text-primary text-xs font-bold mb-4">{item.num}</div>
-                  <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
-                  <p className="text-text-light text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProdukSection />
 
       {/* KEUNGGULAN KOMPETITIF */}
       <KeunggulanSection />

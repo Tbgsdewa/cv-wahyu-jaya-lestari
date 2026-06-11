@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Profile - CV. Wahyu Jaya Lestari</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      line-height: 1.7;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 0;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* COVER PAGE */
+    .cover {
+      background: linear-gradient(135deg, #1a3d2b 0%, #0f1f17 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      padding: 8px 24px;
+      border: 1px solid rgba(201,164,74,0.5);
+      border-radius: 50px;
+      color: #c9a44a;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .cover h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .cover h1 span { color: #c9a44a; }
+
+    .cover-subtitle {
+      font-size: 16px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 50px;
+      max-width: 500px;
+    }
+
+    .cover-divider {
+      width: 80px;
+      height: 3px;
+      background: #c9a44a;
+      margin: 0 auto 40px;
+      border-radius: 2px;
+    }
+
+    .cover-info {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 2;
+    }
+
+    .cover-info strong {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .cover-year {
+      position: absolute;
+      bottom: 60px;
+      font-size: 14px;
+      color: #c9a44a;
+      font-weight: 600;
+      letter-spacing: 3px;
+    }
+
+    .cover-decor {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(201,164,74,0.06);
+      filter: blur(80px);
+    }
+
+    .cover-decor-1 { top: -100px; right: -50px; }
+    .cover-decor-2 { bottom: -80px; left: -80px; }
+
+    /* CONTENT PAGES */
+    .content-page {
+      padding: 50px 55px;
+    }
+
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #f0f0f0;
+      margin-bottom: 35px;
+    }
+
+    .page-header-logo {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1a3d2b;
+    }
+
+    .page-header-logo span { color: #c9a44a; }
+
+    .page-header-section {
+      font-size: 10px;
+      font-weight: 600;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: #c9a44a;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a3d2b;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a3d2b;
+      margin-bottom: 8px;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 13px;
+      color: #444;
+      margin-bottom: 12px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #1a3d2b, #2d5a3f);
+      color: #fff;
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin: 25px 0;
+    }
+
+    .highlight-box h3 {
+      color: #c9a44a;
+      margin-top: 0;
+      font-size: 14px;
+    }
+
+    .highlight-box p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 20px;
+      margin: 25px 0;
+    }
+
+    .stat-box {
+      flex: 1;
+      background: #f7f8f6;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #e8ebe6;
+    }
+
+    .stat-box h4 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #1a3d2b;
+    }
+
+    .stat-box h4 span { color: #c9a44a; }
+
+    .stat-box p {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      margin: 0;
+      text-align: center;
+    }
+
+    .two-col {
+      display: flex;
+      gap: 30px;
+    }
+
+    .two-col > div { flex: 1; }
+
+    .service-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 18px;
+      padding: 15px;
+      background: #f9faf8;
+      border-radius: 10px;
+      border: 1px solid #eef0ec;
+    }
+
+    .service-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #c9a44a;
+      color: #1a3d2b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .service-item h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a3d2b;
+      margin-bottom: 4px;
+    }
+
+    .service-item p {
+      font-size: 11px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .advantage-item {
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid #e8ebe6;
+      background: #fff;
+    }
+
+    .advantage-item h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a3d2b;
+      margin-bottom: 6px;
+    }
+
+    .advantage-item p {
+      font-size: 11px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .advantage-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      background: #c9a44a;
+      color: #1a3d2b;
+      font-size: 9px;
+      font-weight: 700;
+      border-radius: 50px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .values-list {
+      margin: 15px 0;
+    }
+
+    .value-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .value-item:last-child { border-bottom: none; }
+
+    .value-dot {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #c9a44a;
+      margin-top: 6px;
+    }
+
+    .value-item h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a3d2b;
+      margin-bottom: 2px;
+    }
+
+    .value-item p {
+      font-size: 11px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .legal-info {
+      background: #f7f8f6;
+      border-radius: 12px;
+      padding: 25px;
+      border: 1px solid #e8ebe6;
+      margin: 20px 0;
+    }
+
+    .legal-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #e8ebe6;
+      font-size: 12px;
+    }
+
+    .legal-row:last-child { border-bottom: none; }
+
+    .legal-row .label {
+      font-weight: 600;
+      color: #1a3d2b;
+    }
+
+    .legal-row .value { color: #555; }
+
+    .page-footer {
+      position: absolute;
+      bottom: 30px;
+      left: 55px;
+      right: 55px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      color: #bbb;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 10px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .contact-card {
+      background: #f7f8f6;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #e8ebe6;
+    }
+
+    .contact-card h4 {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1a3d2b;
+      margin-bottom: 6px;
+    }
+
+    .contact-card p {
+      font-size: 11px;
+      margin: 0;
+      text-align: center;
+    }
+
+    .closing-box {
+      background: linear-gradient(135deg, #1a3d2b, #0f1f17);
+      color: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .closing-box h3 {
+      color: #c9a44a;
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
+
+    .closing-box p {
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      margin: 0;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; margin: 0; }
+    }
+
+    @media screen {
+      body { background: #e5e5e5; padding: 20px 0; }
+      .page { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER -->
+  <div class="page cover">
+    <div class="cover-decor cover-decor-1"></div>
+    <div class="cover-decor cover-decor-2"></div>
+    
+    <div class="cover-badge">Company Profile</div>
+    
+    <h1>CV. Wahyu Jaya <span>Lestari</span></h1>
+    <p class="cover-subtitle">Pengolahan Kelapa Sawit Terintegrasi &middot; Kabupaten Kampar, Riau</p>
+    
+    <div class="cover-divider"></div>
+    
+    <div class="cover-info">
+      <strong>Kecamatan Tapung, Kabupaten Kampar</strong><br>
+      Provinsi Riau, Indonesia<br><br>
+      <strong>Email:</strong> tbgsdewa@gmail.com<br>
+      <strong>Telepon:</strong> 083857649532<br>
+      <strong>WhatsApp:</strong> wa.me/6283857649532
+    </div>
+    
+    <div class="cover-year">DOKUMEN RESMI &mdash; 2023</div>
+  </div>
+
+  <!-- PAGE 2: TENTANG KAMI & VISI MISI -->
+  <div class="page">
+    <div class="content-page">
+      <div class="page-header">
+        <div class="page-header-logo">CV. Wahyu Jaya <span>Lestari</span></div>
+        <div class="page-header-section">Profil Perusahaan</div>
+      </div>
+
+      <span class="section-label">Tentang Kami</span>
+      <h2>Mitra Pengolahan Sawit Terpercaya di Kampar</h2>
+      
+      <p>CV. Wahyu Jaya Lestari berdiri sebagai wujud komitmen untuk menghadirkan pengolahan kelapa sawit yang tertib, transparan, dan berorientasi hasil di Kabupaten Kampar. Perusahaan resmi terdaftar berdasarkan Akta Notaris Nomor 02 tanggal 02 Oktober 2023 yang dibuat di hadapan Notaris Franderico Aseanto, S.H., M.Kn., dan telah mendapatkan pengesahan dari Kementerian Hukum dan HAM Republik Indonesia dengan nomor registrasi AHU-0061144-AH.01.14 Tahun 2023.</p>
+      
+      <p>Berlokasi di Kecamatan Tapung, salah satu kecamatan dengan kerapatan kebun sawit tertinggi di Riau, perusahaan ini hadir untuk mengisi celah kebutuhan: pengolahan TBS yang dapat dipercaya oleh petani mandiri maupun kelompok tani, dengan mekanisme penimbangan yang akurat dan alur proses yang dapat dipertanggungjawabkan.</p>
+
+      <div class="highlight-box">
+        <h3>Filosofi Perusahaan</h3>
+        <p>Industri sawit bergerak pada volume besar, namun kepercayaan dibangun satu per satu, dari setiap truk yang masuk ke jembatan timbang, dari setiap ton TBS yang diterima, dari setiap liter CPO yang dihasilkan. Fasilitas yang terawat adalah cermin dari bagaimana kami memandang tanggung jawab. Legalitas yang lengkap adalah bukti bahwa kami beroperasi untuk jangka panjang.</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <h4>2023<span>.</span></h4>
+          <p>Tahun Berdiri</p>
+        </div>
+        <div class="stat-box">
+          <h4>AHU<span>.</span></h4>
+          <p>Terdaftar Resmi</p>
+        </div>
+        <div class="stat-box">
+          <h4>Tapung<span>.</span></h4>
+          <p>Lokasi Strategis</p>
+        </div>
+      </div>
+
+      <span class="section-label">Visi</span>
+      <h2 style="font-size: 18px;">Membangun kepercayaan di tiap titik rantai nilai sawit, dari kebun ke tangki, dengan standar operasional yang dapat dipertanggungjawabkan dan kemitraan yang tumbuh bersama.</h2>
+
+      <span class="section-label">Misi</span>
+      <div class="values-list">
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div>
+            <h4>Mengolah TBS secara efisien dan konsisten</h4>
+            <p>Menjaga Oil Extraction Rate (OER) pada standar industri yang kompetitif melalui pengelolaan proses yang disiplin.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div>
+            <h4>Memastikan akurasi penimbangan dan transparansi</h4>
+            <p>Penerimaan TBS dari seluruh pemasok tanpa terkecuali, sebagai bentuk integritas operasional dasar.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div>
+            <h4>Memelihara dan mengembangkan fasilitas produksi</h4>
+            <p>Kapasitas pengolahan dapat diandalkan dan risiko gangguan operasional dapat diminimalkan.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div>
+            <h4>Membangun kemitraan yang berkelanjutan</h4>
+            <p>Dengan petani sawit, kelompok tani, dan pemasok TBS berdasarkan prinsip saling menguntungkan.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div>
+            <h4>Mematuhi seluruh ketentuan hukum dan regulasi</h4>
+            <p>Termasuk perizinan lingkungan dan ketenagakerjaan yang berlaku dalam industri pengolahan kelapa sawit.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <div>
+            <h4>Berkontribusi pada pertumbuhan ekonomi lokal</h4>
+            <p>Melalui penciptaan lapangan kerja dan penyerapan hasil produksi petani mandiri secara langsung.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>CV. Wahyu Jaya Lestari &mdash; Company Profile</span>
+      <span>Halaman 2</span>
+    </div>
+  </div>
+
+  <!-- PAGE 3: PRODUK & LAYANAN -->
+  <div class="page">
+    <div class="content-page">
+      <div class="page-header">
+        <div class="page-header-logo">CV. Wahyu Jaya <span>Lestari</span></div>
+        <div class="page-header-section">Produk & Layanan</div>
+      </div>
+
+      <span class="section-label">Produk & Layanan</span>
+      <h2>Solusi Pengolahan Sawit Terpadu</h2>
+      <p>Dari penerimaan TBS hingga penyimpanan CPO, seluruh proses dilakukan dalam satu ekosistem operasional yang terintegrasi, efisien, dan didukung infrastruktur yang lengkap.</p>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <h4 style="font-size: 16px;">Terintegrasi</h4>
+          <p>Proses hulu hingga penyimpanan</p>
+        </div>
+        <div class="stat-box">
+          <h4 style="font-size: 16px;">Efisien</h4>
+          <p>Penerimaan & pengolahan cepat</p>
+        </div>
+        <div class="stat-box">
+          <h4 style="font-size: 16px;">Terukur</h4>
+          <p>Dokumentasi tertata</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <div>
+          <h4>Pengolahan TBS &rarr; CPO</h4>
+          <p>Penerimaan dan pengolahan tandan buah segar menjadi Crude Palm Oil melalui lini produksi lengkap. Infrastruktur mencakup jembatan timbang, sterilizer, press, klarifikasi, dan tangki penyimpanan.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <div>
+          <h4>Penerimaan & Penimbangan TBS</h4>
+          <p>Layanan penerimaan TBS dengan jembatan timbang berkapasitas memadai dan pencatatan terstruktur. Kepastian bobot yang akurat dan dokumentasi yang rapi untuk seluruh pemasok.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <div>
+          <h4>Penyimpanan CPO</h4>
+          <p>Fasilitas tangki penyimpanan CPO untuk menampung hasil produksi sebelum distribusi. Fleksibilitas waktu pengiriman ke pembeli atau offtaker dengan kapasitas yang memadai.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <div>
+          <h4>Hasil Sampingan (Kernel)</h4>
+          <p>Pengolahan inti sawit sebagai produk sampingan dari proses produksi CPO. Proses kernel recovery terintegrasi dalam lini produksi sebagai sumber pendapatan tambahan bagi mitra.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="margin-top: 30px;">
+        <h3>Target Pasar</h3>
+        <p>Petani sawit mandiri, kelompok tani/gapoktan, KUD/koperasi sawit, investor/mitra modal, dan pembeli CPO/offtaker. Kami melayani seluruh pemangku kepentingan dalam rantai nilai sawit di kawasan Tapung dan sekitarnya.</p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>CV. Wahyu Jaya Lestari &mdash; Company Profile</span>
+      <span>Halaman 3</span>
+    </div>
+  </div>
+
+  <!-- PAGE 4: KEUNGGULAN & NILAI -->
+  <div class="page">
+    <div class="content-page">
+      <div class="page-header">
+        <div class="page-header-logo">CV. Wahyu Jaya <span>Lestari</span></div>
+        <div class="page-header-section">Keunggulan & Nilai</div>
+      </div>
+
+      <span class="section-label">Keunggulan Kompetitif</span>
+      <h2>Fondasi Kuat untuk Kemitraan Jangka Panjang</h2>
+      <p>Infrastruktur terpadu, legalitas yang jelas, serta lokasi strategis menjadi fondasi kami dalam menghadirkan proses penerimaan dan pengolahan TBS yang lebih efisien, transparan, dan berkelanjutan.</p>
+
+      <div class="advantage-grid">
+        <div class="advantage-item">
+          <span class="advantage-tag">01</span>
+          <h4>Infrastruktur Terpadu</h4>
+          <p>Fasilitas pabrik mencakup seluruh tahap pengolahan: penerimaan TBS, sterilisasi, digester & press, klarifikasi CPO, pemulihan kernel, hingga penyimpanan di tangki.</p>
+        </div>
+        <div class="advantage-item">
+          <span class="advantage-tag">02</span>
+          <h4>Jembatan Timbang Operasional</h4>
+          <p>Jembatan timbang berada langsung di area pabrik untuk mempercepat proses penerimaan TBS dan memastikan akurasi penimbangan yang dapat diverifikasi.</p>
+        </div>
+        <div class="advantage-item">
+          <span class="advantage-tag">03</span>
+          <h4>Legalitas Lengkap</h4>
+          <p>Terdaftar resmi sebagai CV berdasarkan akta notaris dengan pengesahan Kemenkumham RI, memberikan kepastian hukum bagi seluruh mitra.</p>
+        </div>
+        <div class="advantage-item">
+          <span class="advantage-tag">04</span>
+          <h4>Listrik PLN Tetap</h4>
+          <p>Sambungan listrik PLN langsung di area pabrik mendukung stabilitas operasional dan efisiensi biaya energi jangka panjang.</p>
+        </div>
+        <div class="advantage-item">
+          <span class="advantage-tag">05</span>
+          <h4>Alat Mekanis Pendukung</h4>
+          <p>Ketersediaan wheel loader di area pabrik membantu proses handling material TBS menjadi lebih cepat dan efisien.</p>
+        </div>
+        <div class="advantage-item">
+          <span class="advantage-tag">06</span>
+          <h4>Lokasi Strategis</h4>
+          <p>Berada di Kecamatan Tapung, salah satu kawasan produksi TBS potensial di Provinsi Riau, mendukung efisiensi transportasi.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 30px;">
+        <span class="section-label">Nilai-Nilai Perusahaan</span>
+        <h2 style="font-size: 22px;">Prinsip yang Kami Pegang</h2>
+        
+        <div class="values-list">
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div>
+              <h4>Integritas Timbangan</h4>
+              <p>Setiap kilogram TBS yang masuk ditimbang dengan akurat dan dicatat dengan jujur.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div>
+              <h4>Keandalan Operasional</h4>
+              <p>Pabrik yang beroperasi konsisten berarti kepastian bagi pemasok.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div>
+              <h4>Transparansi Proses</h4>
+              <p>Setiap tahap dari penerimaan hingga penyimpanan CPO dapat ditelusuri dan dipertanggungjawabkan.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div>
+              <h4>Kemitraan Jangka Panjang</h4>
+              <p>Kepentingan mitra adalah bagian dari kepentingan bisnis kami.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div>
+              <h4>Kepatuhan Hukum</h4>
+              <p>Legalitas lengkap adalah fondasi bisnis yang sehat dan perlindungan bagi seluruh pihak.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div>
+              <h4>Tanggung Jawab Lingkungan</h4>
+              <p>Komitmen menjalankan operasional dengan pengelolaan limbah yang bertanggung jawab.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>CV. Wahyu Jaya Lestari &mdash; Company Profile</span>
+      <span>Halaman 4</span>
+    </div>
+  </div>
+
+  <!-- PAGE 5: LEGALITAS & KONTAK -->
+  <div class="page">
+    <div class="content-page">
+      <div class="page-header">
+        <div class="page-header-logo">CV. Wahyu Jaya <span>Lestari</span></div>
+        <div class="page-header-section">Legalitas & Kontak</div>
+      </div>
+
+      <span class="section-label">Informasi Legal</span>
+      <h2>Data Resmi Perusahaan</h2>
+
+      <div class="legal-info">
+        <div class="legal-row">
+          <span class="label">Nama Perusahaan</span>
+          <span class="value">CV. Wahyu Jaya Lestari</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Bidang Usaha</span>
+          <span class="value">Pengolahan Kelapa Sawit</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Badan Hukum</span>
+          <span class="value">Persekutuan Komanditer (CV)</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Akta Notaris</span>
+          <span class="value">Nomor 02, tanggal 02 Oktober 2023</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Notaris</span>
+          <span class="value">Franderico Aseanto, S.H., M.Kn.</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">No. Pengesahan Kemenkumham</span>
+          <span class="value">AHU-0061144-AH.01.14 Tahun 2023</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Alamat</span>
+          <span class="value">Kecamatan Tapung, Kabupaten Kampar, Riau</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Email</span>
+          <span class="value">tbgsdewa@gmail.com</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Telepon</span>
+          <span class="value">083857649532</span>
+        </div>
+      </div>
+
+      <span class="section-label">Hubungi Kami</span>
+      <h2 style="font-size: 22px;">Mari Bermitra dengan Kami</h2>
+      <p>Kami terbuka untuk kemitraan dengan petani, kelompok tani, investor, dan pembeli CPO. Hubungi kami untuk informasi lebih lanjut mengenai peluang kerjasama.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h4>Lokasi</h4>
+          <p>Kecamatan Tapung, Kabupaten Kampar, Provinsi Riau, Indonesia</p>
+        </div>
+        <div class="contact-card">
+          <h4>Email</h4>
+          <p>tbgsdewa@gmail.com</p>
+        </div>
+        <div class="contact-card">
+          <h4>WhatsApp</h4>
+          <p>083857649532</p>
+        </div>
+      </div>
+
+      <div class="closing-box">
+        <h3>CV. Wahyu Jaya Lestari</h3>
+        <p>Dari perkebunan menuju nilai &mdash; kami memproses tandan buah segar menjadi CPO berkualitas dengan fasilitas yang terverifikasi dan legalitas yang jelas.</p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>CV. Wahyu Jaya Lestari &mdash; Company Profile</span>
+      <span>Halaman 5</span>
+    </div>
+  </div>
+
+</body>
+</html>
