@@ -64,7 +64,7 @@ export default function AboutUsSection() {
     {
       icon: <Factory className="w-6 h-6" />,
       secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-[#c9a44a]" />,
-      title: "Pengolahan TBS",
+      title: "Pengolahan BRONDOLAN",
       description:
         "Penerimaan dan pengolahan tandan buah segar menjadi Crude Palm Oil melalui lini produksi lengkap: sterilizer, digester, press, dan klarifikasi.",
       position: "left",
@@ -185,7 +185,7 @@ export default function AboutUsSection() {
 
         <motion.p className="text-center max-w-2xl mx-auto mb-16 text-[#1a3d2b]/80" variants={itemVariants}>
           Berdiri sejak 2023 di Kecamatan Tapung, Kabupaten Kampar, Riau, salah satu sentra perkebunan sawit terbesar di Sumatera.
-          Kami memproses TBS menjadi CPO berkualitas dengan infrastruktur terpadu, legalitas resmi, dan komitmen terhadap kemitraan yang berkelanjutan.
+          Kami memproses BRONDOLAN menjadi CPO berkualitas dengan infrastruktur terpadu, legalitas resmi, dan komitmen terhadap kemitraan yang berkelanjutan.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">

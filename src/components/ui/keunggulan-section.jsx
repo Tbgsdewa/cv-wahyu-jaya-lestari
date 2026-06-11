@@ -10,7 +10,6 @@ import {
   ArrowRight,
   Shield,
   TrendingUp,
-  Sparkles,
 } from "lucide-react"
 
 const advantages = [
@@ -19,7 +18,7 @@ const advantages = [
     icon: Factory,
     title: "Infrastruktur Terpadu",
     description:
-      "Fasilitas pabrik mendukung seluruh tahap pengolahan, mulai dari penerimaan TBS, sterilisasi, digester & press, klarifikasi CPO, pemulihan kernel, hingga penyimpanan di tangki.",
+      "Fasilitas pabrik mendukung seluruh tahap pengolahan, mulai dari penerimaan BRONDOLAN, sterilisasi, digester & press, klarifikasi CPO, pemulihan kernel, hingga penyimpanan di tangki.",
     color: "#063D2E",
   },
   {
@@ -27,7 +26,7 @@ const advantages = [
     icon: Scale,
     title: "Jembatan Timbang Operasional",
     description:
-      "Jembatan timbang berada langsung di area pabrik untuk mempercepat proses penerimaan TBS dan memastikan akurasi data penimbangan yang dapat diverifikasi.",
+      "Jembatan timbang berada langsung di area pabrik untuk mempercepat proses penerimaan BRONDOLAN dan memastikan akurasi data penimbangan yang dapat diverifikasi.",
     color: "#C89B3C",
   },
   {
@@ -51,7 +50,7 @@ const advantages = [
     icon: Truck,
     title: "Alat Mekanis Pendukung",
     description:
-      "Ketersediaan wheel loader di area pabrik membantu proses handling material TBS menjadi lebih cepat, efisien, dan mengurangi waktu tunggu.",
+      "Ketersediaan wheel loader di area pabrik membantu proses handling material BRONDOLAN menjadi lebih cepat, efisien, dan mengurangi waktu tunggu.",
     color: "#063D2E",
   },
   {
@@ -59,7 +58,7 @@ const advantages = [
     icon: MapPin,
     title: "Lokasi Strategis",
     description:
-      "Berada di Kecamatan Tapung, salah satu kawasan produksi TBS potensial di Provinsi Riau, sehingga mendukung efisiensi biaya dan waktu transportasi.",
+      "Berada di Kecamatan Tapung, salah satu kawasan produksi BRONDOLAN potensial di Provinsi Riau, sehingga mendukung efisiensi biaya dan waktu transportasi.",
     color: "#C89B3C",
   },
 ]
@@ -213,7 +212,6 @@ export default function KeunggulanSection() {
             variants={fadeUpVariants}
             className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#C89B3C]/30 bg-white/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#A77A24] shadow-sm backdrop-blur"
           >
-            <Sparkles className="w-3.5 h-3.5" />
             Keunggulan Kompetitif
           </motion.div>
 
@@ -241,7 +239,7 @@ export default function KeunggulanSection() {
           >
             Infrastruktur terpadu, legalitas yang jelas, serta lokasi strategis
             menjadi fondasi kami dalam menghadirkan proses penerimaan dan
-            pengolahan TBS yang lebih efisien, transparan, dan berkelanjutan.
+            pengolahan BRONDOLAN yang lebih efisien, transparan, dan berkelanjutan.
           </motion.p>
         </motion.div>
 
