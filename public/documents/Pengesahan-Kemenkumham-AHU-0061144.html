@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pengesahan Kemenkumham - CV. Wahyu Jaya Lestari</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: A4; margin: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a1a; line-height: 1.7; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 0; position: relative; overflow: hidden; }
+    
+    .cover { background: linear-gradient(135deg, #1a3d2b 0%, #0f1f17 100%); color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px; }
+    .cover-badge { display: inline-block; padding: 8px 24px; border: 1px solid rgba(201,164,74,0.5); border-radius: 50px; color: #c9a44a; font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 40px; }
+    .cover h1 { font-size: 40px; font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+    .cover h1 span { color: #c9a44a; }
+    .cover-subtitle { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 50px; max-width: 450px; }
+    .cover-divider { width: 80px; height: 3px; background: #c9a44a; margin: 0 auto 40px; border-radius: 2px; }
+    .cover-info { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 2.2; }
+    .cover-info strong { color: rgba(255,255,255,0.8); }
+    .cover-reg { font-size: 16px; color: #c9a44a; font-weight: 700; letter-spacing: 1px; margin-bottom: 15px; }
+    .cover-year { position: absolute; bottom: 60px; font-size: 13px; color: #c9a44a; font-weight: 600; letter-spacing: 3px; }
+    .cover-decor { position: absolute; width: 300px; height: 300px; border-radius: 50%; background: rgba(201,164,74,0.06); filter: blur(80px); }
+    .cover-decor-1 { top: -100px; right: -50px; }
+    .cover-decor-2 { bottom: -80px; left: -80px; }
+
+    .content-page { padding: 50px 55px; }
+    .page-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 2px solid #f0f0f0; margin-bottom: 35px; }
+    .page-header-logo { font-size: 12px; font-weight: 700; color: #1a3d2b; }
+    .page-header-logo span { color: #c9a44a; }
+    .page-header-section { font-size: 10px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 2px; }
+    .section-label { display: inline-block; color: #c9a44a; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+    h2 { font-size: 26px; font-weight: 800; color: #1a3d2b; margin-bottom: 20px; line-height: 1.2; }
+    p { font-size: 13px; color: #444; margin-bottom: 12px; line-height: 1.8; text-align: justify; }
+    
+    .legal-box { background: #f7f8f6; border-radius: 12px; padding: 30px; border: 1px solid #e8ebe6; margin: 25px 0; }
+    .legal-box h3 { font-size: 16px; font-weight: 700; color: #1a3d2b; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #c9a44a; }
+    .legal-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e8ebe6; font-size: 12px; }
+    .legal-row:last-child { border-bottom: none; }
+    .legal-row .label { font-weight: 600; color: #1a3d2b; flex-shrink: 0; width: 220px; }
+    .legal-row .value { color: #555; text-align: right; }
+
+    .highlight-box { background: linear-gradient(135deg, #1a3d2b, #2d5a3f); color: #fff; border-radius: 12px; padding: 25px 30px; margin: 25px 0; }
+    .highlight-box h3 { color: #c9a44a; margin: 0 0 8px; font-size: 14px; }
+    .highlight-box p { color: rgba(255,255,255,0.85); margin: 0; }
+
+    .reg-number { display: inline-block; background: #1a3d2b; color: #c9a44a; font-size: 18px; font-weight: 800; padding: 15px 30px; border-radius: 12px; letter-spacing: 1px; margin: 15px 0; }
+
+    .verified-box { border: 3px solid #1a3d2b; border-radius: 16px; padding: 30px; text-align: center; margin: 30px 0; background: #f7f8f6; }
+    .verified-box h3 { font-size: 20px; color: #1a3d2b; margin-bottom: 8px; }
+    .verified-box p { font-size: 12px; color: #888; text-align: center; margin: 0; }
+    .verified-icon { width: 60px; height: 60px; border-radius: 50%; background: #1a3d2b; color: #c9a44a; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 28px; }
+
+    .footer-note { margin-top: 40px; padding-top: 20px; border-top: 2px solid #f0f0f0; font-size: 11px; color: #999; line-height: 1.8; }
+    .page-footer { position: absolute; bottom: 30px; left: 55px; right: 55px; display: flex; justify-content: space-between; font-size: 9px; color: #bbb; border-top: 1px solid #f0f0f0; padding-top: 10px; }
+
+    @media print { body { background: #fff; } .page { box-shadow: none; margin: 0; } }
+    @media screen { body { background: #e5e5e5; padding: 20px 0; } .page { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 20px; } }
+  </style>
+</head>
+<body>
+
+  <!-- COVER -->
+  <div class="page cover">
+    <div class="cover-decor cover-decor-1"></div>
+    <div class="cover-decor cover-decor-2"></div>
+    
+    <div class="cover-badge">Dokumen Legalitas Resmi</div>
+    
+    <h1>Pengesahan<br><span>Kemenkumham</span></h1>
+    <p class="cover-subtitle">Surat pengesahan badan hukum dari Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia</p>
+    
+    <div class="cover-divider"></div>
+    
+    <div class="cover-reg">AHU-0061144-AH.01.14 Tahun 2023</div>
+    
+    <div class="cover-info">
+      <strong>CV. Wahyu Jaya Lestari</strong><br>
+      Persekutuan Komanditer (CV)<br><br>
+      <strong>Kementerian Hukum dan HAM</strong><br>
+      Republik Indonesia
+    </div>
+    
+    <div class="cover-year">DOKUMEN RESMI &mdash; 2023</div>
+  </div>
+
+  <!-- PAGE 2: DETAIL PENGESAHAN -->
+  <div class="page">
+    <div class="content-page">
+      <div class="page-header">
+        <div class="page-header-logo">CV. Wahyu Jaya <span>Lestari</span></div>
+        <div class="page-header-section">Pengesahan Kemenkumham</div>
+      </div>
+
+      <span class="section-label">Informasi Pengesahan</span>
+      <h2>Detail Pengesahan Badan Hukum</h2>
+      <p>Dokumen ini merupakan ringkasan informasi pengesahan badan hukum CV. Wahyu Jaya Lestari yang telah diterbitkan oleh Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia.</p>
+
+      <div class="verified-box">
+        <div class="verified-icon">✓</div>
+        <h3>TELAH DISESAHKAN</h3>
+        <p>Oleh Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia</p>
+      </div>
+
+      <div class="reg-number">AHU-0061144-AH.01.14 Tahun 2023</div>
+
+      <div class="legal-box">
+        <h3>Data Pengesahan</h3>
+        <div class="legal-row">
+          <span class="label">Nomor Registrasi</span>
+          <span class="value">AHU-0061144-AH.01.14 Tahun 2023</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Lembaga Penerbit</span>
+          <span class="value">Kementerian Hukum dan HAM RI</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Jenis Pengesahan</span>
+          <span class="value">Pengesahan Badan Hukum Persekutuan Komanditer</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Tahun Pengesahan</span>
+          <span class="value">2023</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Status</span>
+          <span class="value">Aktif &mdash; Telah Disahkan</span>
+        </div>
+      </div>
+
+      <div class="legal-box">
+        <h3>Data Perusahaan Terdaftar</h3>
+        <div class="legal-row">
+          <span class="label">Nama Perusahaan</span>
+          <span class="value">CV. Wahyu Jaya Lestari</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Bentuk Badan Hukum</span>
+          <span class="value">Persekutuan Komanditer (CV)</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Nomor Akta Notaris</span>
+          <span class="value">Nomor 02, tanggal 02 Oktober 2023</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Notaris Pembuat Akta</span>
+          <span class="value">Franderico Aseanto, S.H., M.Kn.</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Bidang Usaha</span>
+          <span class="value">Pengolahan Kelapa Sawit</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Domisili</span>
+          <span class="value">Kecamatan Tapung, Kabupaten Kampar, Riau</span>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Dasar Hukum</h3>
+        <p>Pengesahan ini diterbitkan berdasarkan ketentuan Undang-Undang Nomor 16 Tahun 2019 tentang Perubahan atas Undang-Undang Nomor 1 Tahun 1974 tentang Perkawinan, serta Peraturan Pemerintah terkait pendaftaran badan hukum dan peraturan Menteri Hukum dan HAM mengenai tata cara pengesahan badan hukum Persekutuan Komanditer.</p>
+      </div>
+
+      <div class="footer-note">
+        <p><strong>Catatan:</strong> Dokumen ini merupakan ringkasan informasi pengesahan badan hukum dari Kemenkumham RI. Untuk keperluan verifikasi resmi, data dapat dikonfirmasi melalui sistem Administrasi Hukum Umum (AHU) Online di ahu.go.id atau dengan menghubungi Direktorat Jenderal Administrasi Hukum Umum Kemenkumham RI. Salinan resmi surat pengesahan dapat diminta kepada pihak perusahaan.</p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>CV. Wahyu Jaya Lestari &mdash; Pengesahan Kemenkumham</span>
+      <span>Halaman 2</span>
+    </div>
+  </div>
+
+</body>
+</html>

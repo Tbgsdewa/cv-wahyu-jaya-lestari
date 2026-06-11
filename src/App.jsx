@@ -107,12 +107,12 @@ function App() {
           </div>
           <div className="flex flex-col gap-4 max-w-[800px] mx-auto">
             {[
+              { title: 'Profil Perusahaan', desc: 'Dokumen profil lengkap perusahaan mencakup visi, misi, fasilitas, dan informasi operasional.', tags: ['PDF', 'Company Profile'], file: '/documents/Company-Profile-CV-Wahyu-Jaya-Lestari.pdf', featured: true },
               { title: 'Akta Pendirian Perusahaan', desc: 'Akta Notaris Nomor 02 tanggal 02 Oktober 2023, dibuat di hadapan Notaris Franderico Aseanto, S.H., M.Kn.', tags: ['PDF', 'Resmi'], file: '/documents/Akta-Pendirian-CV-Wahyu-Jaya-Lestari.pdf' },
               { title: 'Pengesahan Kemenkumham', desc: 'Surat pengesahan dari Kementerian Hukum dan HAM RI dengan nomor registrasi AHU-0061144-AH.01.14 Tahun 2023.', tags: ['PDF', 'Resmi'], file: '/documents/Pengesahan-Kemenkumham-AHU-0061144.pdf' },
-              { title: 'Profil Perusahaan', desc: 'Dokumen profil lengkap perusahaan mencakup visi, misi, fasilitas, dan informasi operasional.', tags: ['PDF', 'Company Profile'], file: '/documents/Company-Profile-CV-Wahyu-Jaya-Lestari.pdf' },
             ].map(doc => (
-              <div key={doc.title} className="flex items-center gap-6 p-6 md:p-8 bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:border-accent hover:shadow-[0_8px_30px_rgba(201,164,74,0.1)]">
-                <div className="shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center text-white">
+              <div key={doc.title} className={`flex items-center gap-6 p-6 md:p-8 rounded-2xl transition-all duration-300 ${doc.featured ? 'bg-gradient-to-r from-[#1a3d2b] to-[#2d5a3f] border-2 border-[#c9a44a] shadow-[0_8px_40px_rgba(201,164,74,0.2)]' : 'bg-white border border-gray-200 hover:border-accent hover:shadow-[0_8px_30px_rgba(201,164,74,0.1)]'}`}>
+                <div className={`shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-white ${doc.featured ? 'bg-[#c9a44a]' : 'bg-gradient-to-br from-primary to-primary-light'}`}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                     <polyline points="14 2 14 8 20 8"/>
@@ -121,21 +121,35 @@ function App() {
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-bold text-primary mb-1">{doc.title}</h3>
-                  <p className="text-sm text-text-light leading-relaxed mb-2">{doc.desc}</p>
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className={`text-base font-bold ${doc.featured ? 'text-white' : 'text-primary'}`}>{doc.title}</h3>
+                    {doc.featured && <span className="px-2 py-0.5 bg-[#c9a44a] text-[#1a3d2b] text-[9px] font-bold uppercase tracking-wider rounded-full">Featured</span>}
+                  </div>
+                  <p className={`text-sm leading-relaxed mb-2 ${doc.featured ? 'text-white/70' : 'text-text-light'}`}>{doc.desc}</p>
                   <div className="flex gap-2 flex-wrap">
                     {doc.tags.map(tag => (
-                      <span key={tag} className="inline-block px-2.5 py-0.5 bg-bg-alt rounded-full text-[10px] font-semibold text-primary uppercase tracking-wide">{tag}</span>
+                      <span key={tag} className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide ${doc.featured ? 'bg-white/15 text-white' : 'bg-bg-alt text-primary'}`}>{tag}</span>
                     ))}
                   </div>
                 </div>
-                <a href={doc.file} download className="shrink-0 w-12 h-12 rounded-full bg-accent text-primary flex items-center justify-center no-underline transition-all duration-300 hover:bg-primary hover:text-accent hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(26,61,43,0.2)]">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                  </svg>
-                </a>
+                {doc.featured ? (
+                  <a href={doc.file} download className="botao-download shrink-0 no-underline relative">
+                    <span className="texto-download">Unduh</span>
+                    <svg className="svg-download" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                      <polyline points="7 10 12 15 17 10"/>
+                      <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                  </a>
+                ) : (
+                  <a href={doc.file} download className="shrink-0 w-12 h-12 rounded-full bg-accent text-primary flex items-center justify-center no-underline transition-all duration-300 hover:bg-primary hover:text-accent hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(26,61,43,0.2)]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                      <polyline points="7 10 12 15 17 10"/>
+                      <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                  </a>
+                )}
               </div>
             ))}
           </div>

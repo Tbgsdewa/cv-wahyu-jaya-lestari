@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Akta Pendirian - CV. Wahyu Jaya Lestari</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: A4; margin: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a1a; line-height: 1.7; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 0; position: relative; overflow: hidden; }
+    
+    /* COVER */
+    .cover { background: linear-gradient(135deg, #1a3d2b 0%, #0f1f17 100%); color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px; }
+    .cover-badge { display: inline-block; padding: 8px 24px; border: 1px solid rgba(201,164,74,0.5); border-radius: 50px; color: #c9a44a; font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 40px; }
+    .cover h1 { font-size: 42px; font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+    .cover h1 span { color: #c9a44a; }
+    .cover-subtitle { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 50px; max-width: 450px; }
+    .cover-divider { width: 80px; height: 3px; background: #c9a44a; margin: 0 auto 40px; border-radius: 2px; }
+    .cover-info { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 2.2; }
+    .cover-info strong { color: rgba(255,255,255,0.8); }
+    .cover-year { position: absolute; bottom: 60px; font-size: 13px; color: #c9a44a; font-weight: 600; letter-spacing: 3px; }
+    .cover-decor { position: absolute; width: 300px; height: 300px; border-radius: 50%; background: rgba(201,164,74,0.06); filter: blur(80px); }
+    .cover-decor-1 { top: -100px; right: -50px; }
+    .cover-decor-2 { bottom: -80px; left: -80px; }
+
+    /* CONTENT */
+    .content-page { padding: 50px 55px; }
+    .page-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 2px solid #f0f0f0; margin-bottom: 35px; }
+    .page-header-logo { font-size: 12px; font-weight: 700; color: #1a3d2b; }
+    .page-header-logo span { color: #c9a44a; }
+    .page-header-section { font-size: 10px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 2px; }
+    .section-label { display: inline-block; color: #c9a44a; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+    h2 { font-size: 26px; font-weight: 800; color: #1a3d2b; margin-bottom: 20px; line-height: 1.2; }
+    p { font-size: 13px; color: #444; margin-bottom: 12px; line-height: 1.8; text-align: justify; }
+    
+    .legal-box { background: #f7f8f6; border-radius: 12px; padding: 30px; border: 1px solid #e8ebe6; margin: 25px 0; }
+    .legal-box h3 { font-size: 16px; font-weight: 700; color: #1a3d2b; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #c9a44a; }
+    .legal-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e8ebe6; font-size: 12px; }
+    .legal-row:last-child { border-bottom: none; }
+    .legal-row .label { font-weight: 600; color: #1a3d2b; flex-shrink: 0; width: 200px; }
+    .legal-row .value { color: #555; text-align: right; }
+
+    .highlight-box { background: linear-gradient(135deg, #1a3d2b, #2d5a3f); color: #fff; border-radius: 12px; padding: 25px 30px; margin: 25px 0; }
+    .highlight-box h3 { color: #c9a44a; margin: 0 0 8px; font-size: 14px; }
+    .highlight-box p { color: rgba(255,255,255,0.85); margin: 0; }
+
+    .stamp-box { display: inline-block; border: 3px solid #c9a44a; border-radius: 12px; padding: 15px 30px; margin: 20px 0; text-align: center; }
+    .stamp-box h4 { font-size: 18px; font-weight: 800; color: #1a3d2b; margin-bottom: 4px; }
+    .stamp-box p { font-size: 11px; color: #888; margin: 0; text-align: center; }
+
+    .footer-note { margin-top: 40px; padding-top: 20px; border-top: 2px solid #f0f0f0; font-size: 11px; color: #999; line-height: 1.8; }
+
+    .page-footer { position: absolute; bottom: 30px; left: 55px; right: 55px; display: flex; justify-content: space-between; font-size: 9px; color: #bbb; border-top: 1px solid #f0f0f0; padding-top: 10px; }
+
+    @media print { body { background: #fff; } .page { box-shadow: none; margin: 0; } }
+    @media screen { body { background: #e5e5e5; padding: 20px 0; } .page { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 20px; } }
+  </style>
+</head>
+<body>
+
+  <!-- COVER -->
+  <div class="page cover">
+    <div class="cover-decor cover-decor-1"></div>
+    <div class="cover-decor cover-decor-2"></div>
+    
+    <div class="cover-badge">Dokumen Legalitas Resmi</div>
+    
+    <h1>Akta Pendirian<br><span>Perusahaan</span></h1>
+    <p class="cover-subtitle">Akta Notaris resmi pendirian CV. Wahyu Jaya Lestari sebagai badan hukum Persekutuan Komanditer</p>
+    
+    <div class="cover-divider"></div>
+    
+    <div class="cover-info">
+      <strong>CV. Wahyu Jaya Lestari</strong><br>
+      Persekutuan Komanditer (CV)<br><br>
+      <strong>Akta Notaris Nomor 02</strong><br>
+      Tanggal 02 Oktober 2023<br><br>
+      <strong>Notaris:</strong><br>
+      Franderico Aseanto, S.H., M.Kn.
+    </div>
+    
+    <div class="cover-year">DOKUMEN RESMI &mdash; 2023</div>
+  </div>
+
+  <!-- PAGE 2: DETAIL AKTA -->
+  <div class="page">
+    <div class="content-page">
+      <div class="page-header">
+        <div class="page-header-logo">CV. Wahyu Jaya <span>Lestari</span></div>
+        <div class="page-header-section">Akta Pendirian</div>
+      </div>
+
+      <span class="section-label">Informasi Akta</span>
+      <h2>Detail Akta Pendirian Perusahaan</h2>
+      <p>Dokumen ini merupakan ringkasan informasi akta pendirian CV. Wahyu Jaya Lestari yang telah dibuat dan disahkan secara resmi sesuai dengan ketentuan hukum yang berlaku di Republik Indonesia.</p>
+
+      <div class="legal-box">
+        <h3>Data Akta Notaris</h3>
+        <div class="legal-row">
+          <span class="label">Nomor Akta</span>
+          <span class="value">02</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Tanggal Akta</span>
+          <span class="value">02 Oktober 2023</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Notaris</span>
+          <span class="value">Franderico Aseanto, S.H., M.Kn.</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Jenis Dokumen</span>
+          <span class="value">Akta Pendirian Persekutuan Komanditer (CV)</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Bentuk Badan Hukum</span>
+          <span class="value">Persekutuan Komanditer (Commanditaire Vennootschap)</span>
+        </div>
+      </div>
+
+      <div class="legal-box">
+        <h3>Data Perusahaan</h3>
+        <div class="legal-row">
+          <span class="label">Nama Perusahaan</span>
+          <span class="value">CV. Wahyu Jaya Lestari</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Bidang Usaha</span>
+          <span class="value">Pengolahan Kelapa Sawit</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Kegiatan Usaha Utama</span>
+          <span class="value">Penerimaan dan pengolahan Tandan Buah Segar (TBS) menjadi Crude Palm Oil (CPO) dan produk turunannya</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Alamat Perusahaan</span>
+          <span class="value">Kecamatan Tapung, Kabupaten Kampar, Provinsi Riau</span>
+        </div>
+        <div class="legal-row">
+          <span class="label">Tahun Pendirian</span>
+          <span class="value">2023</span>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Status Hukum</h3>
+        <p>Akta pendirian ini telah dibuat secara sah di hadapan Notaris dan telah mendapatkan pengesahan dari Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia. Perusahaan berstatus aktif dan berhak menjalankan kegiatan usaha sesuai dengan ketentuan yang tercantum dalam akta.</p>
+      </div>
+
+      <div class="stamp-box">
+        <h4>TERDAFTAR RESMI</h4>
+        <p>Kementerian Hukum dan HAM RI</p>
+      </div>
+
+      <div class="footer-note">
+        <p><strong>Catatan:</strong> Dokumen ini merupakan ringkasan informasi akta pendirian. Untuk keperluan verifikasi hukum, silakan menghubungi notaris terkait atau meminta salinan resmi akta notaris kepada pihak perusahaan. Dokumen asli dapat ditunjukkan upon request kepada pihak yang berwenang.</p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>CV. Wahyu Jaya Lestari &mdash; Akta Pendirian</span>
+      <span>Halaman 2</span>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -14,3 +14,79 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Animated Download Button - adapted from Uiverse.io */
+.botao-download {
+  width: 125px;
+  height: 45px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 1px 1px rgba(201, 164, 74, 0.37);
+  padding: 5px 10px;
+  background: linear-gradient(135deg, #c9a44a, #d4b76a);
+  color: #1a3d2b;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(201, 164, 74, 0.4));
+  transition: 0.5s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.botao-download .svg-download {
+  display: none;
+}
+
+.botao-download:hover {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 0.5s linear;
+}
+
+.botao-download:hover .texto-download {
+  display: none;
+}
+
+.botao-download:hover .svg-download {
+  display: inline;
+}
+
+.botao-download:hover::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 3px;
+  background-color: #c9a44a;
+  margin-left: -20px;
+  animation: botao-animate 0.9s linear infinite;
+}
+
+.botao-download:hover::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3.5px solid transparent;
+  border-top: 3.5px solid #fff;
+  border-right: 3.5px solid #fff;
+  border-radius: 50%;
+  animation: botao-animateC 2s linear infinite;
+}
+
+@keyframes botao-animateC {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes botao-animate {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
